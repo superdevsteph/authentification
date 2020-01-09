@@ -64,7 +64,7 @@
  
  
 <section class="my-5 center_div">
- <a href="${pageContext.request.contextPath}/formTopo">Ajouter un Topo</a>
+ <a href="${pageContext.request.contextPath}/topoForm">Ajouter un Topo</a>
  
 <br/>
 <table border="1">
@@ -83,7 +83,7 @@
  <c:forEach items="${topoInfos}" var="info">
  
  <tr>
-   <td> ${info.nom}  </td>
+   <td> ${info.toponame}  </td>
    <td> ${info.region}  </td>
    <td> ${info.nbSites} </td>
      <td> ${info.nbSecteurs} </td>

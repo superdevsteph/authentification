@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<%@ page import="fr.ocr.climbing.mail.JavaEmail"%>
+<%@ page import="com.hellokoding.account.mail.JavaEmail"%>
 <%@ page import="javax.mail.MessagingException"%>
 <%
 	String message = null;
@@ -46,7 +46,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>User List</title>
-<style><%@include file="/resources/css/style.css"%></style>
+	<style><%@include file="/resources/css/style.css"%></style>
 </head>
 <header class="h-25 d-inline-block">
 	<div class="overlay"></div>

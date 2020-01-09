@@ -43,21 +43,13 @@
 						<div class="col-3">
 							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
-						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
-								un compte</a>
-						</div>
+					
 						
 						<div class="col-3">
 							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
 						</div>
 						
-						<%-- 	<div class="col-2">
-							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
-						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
-						</div> --%>
+					
 
 					</div>
 				</div>

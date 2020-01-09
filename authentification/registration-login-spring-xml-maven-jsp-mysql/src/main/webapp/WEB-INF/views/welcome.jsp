@@ -8,7 +8,7 @@
 <html>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>User List</title>
+	<title>Welcome</title>
 	<style><%@include file="/resources/css/style.css"%></style>
 </head>
 <header class="h-25 d-inline-block">
@@ -43,15 +43,14 @@
 							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
 						</div>
 						
-							<div class="col-3">
+					<div class="col-3">
 							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
 						</div>
-						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
-						</div>
-
+</div>
+				</div>
 					</div>
 				</div>
+				</section>
 <div class="container">
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">
@@ -59,10 +58,24 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
 
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+        <h2>Welcome ${pageContext.request.userPrincipal.name} </h2>
 
     </c:if>
 
+</div>
+
+<br/>
+
+ 
+<div class="container">
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <form id="logoutForm" method="POST" action="${contextPath}/logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+
+        <a onclick="document.forms['logoutForm'].submit()" class="btn btn-primary btn-lg active" role="button">Logout</a>
+
+    </c:if>
 </div>
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

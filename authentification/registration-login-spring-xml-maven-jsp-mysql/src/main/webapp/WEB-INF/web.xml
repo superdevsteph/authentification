@@ -5,6 +5,11 @@
          version="2.5">
 
     <display-name>Account Registration Web Application</display-name>
+    
+  
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
     <!-- Location of Java @Configuration classes that configure the components that makeup this application -->
     <context-param>
