@@ -95,7 +95,7 @@
 							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
 						</div>
 						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
+							<a href="${pageContext.request.contextPath}/topoForm" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
 						</div>
 	</div>
 	

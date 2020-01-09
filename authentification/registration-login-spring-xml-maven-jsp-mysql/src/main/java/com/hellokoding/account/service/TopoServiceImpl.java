@@ -47,11 +47,6 @@ public class TopoServiceImpl implements TopoService {
 	
 	
 	
-	
-	
-	
-	
-	
 	@SuppressWarnings("unchecked")
 	@Transactional
 	@Override
@@ -63,6 +58,8 @@ public class TopoServiceImpl implements TopoService {
 		Query query = session.createQuery(sql);
 		return query.list();
 	}
+	
+	
 	 @Transactional
     @Override
     public void saveTopo(Topo topo) {

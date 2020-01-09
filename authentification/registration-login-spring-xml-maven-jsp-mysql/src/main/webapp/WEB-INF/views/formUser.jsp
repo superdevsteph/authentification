@@ -67,7 +67,7 @@
 		<div class="container">
 			<div class="row">
 			
-			<form:form class="my-5 center_div col-6 form-signin" action="saveUser" method="POST"
+			<form:form class="my-5 center_div col-6 form-signin" action="save" method="POST"
 							modelAttribute="userForm">
 					
 					
@@ -77,8 +77,8 @@
 							<table>
 								<tr>
 									<td>Name</td>
-									<td><form:input path="name" required="required"/></td>
-									<td><form:errors path="name" class="error-message" /></td>
+									<td><form:input path="username" required="required"/></td>
+									<td><form:errors path="username" class="error-message" /></td>
 								</tr>
 								<tr>
 									<td>Password</td>

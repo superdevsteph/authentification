@@ -11,12 +11,14 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hellokoding.account.model.Topo;
 import com.hellokoding.account.model.User;
@@ -54,11 +56,50 @@ public class UserController {
 		binder.registerCustomEditor(Date.class, null, new CustomDateEditor(dateFormat, true));
 	}
     
-    @RequestMapping("/home")
-	public String home(Model model) {
+    @RequestMapping("/index")
+	public String index(Model model) {
 
-		return "home";
+		return "index";
 	}
+    
+    @RequestMapping("/home")
+   	public String home(Model model) {
+
+   		return "home";
+   	}
+    
+    @RequestMapping("/about")
+   	public String about(Model model) {
+
+   		return "about";
+   	}
+    
+ 
+    
+    @RequestMapping("/formUser")
+   	public String formUser(Model model) {
+
+   		return "formUser";
+   	}
+    
+    @RequestMapping("/contact")
+   	public String contact(Model model) {
+
+   		return "contact";
+   	}
+    
+    
+    @RequestMapping("/blog")
+   	public String blog(Model model) {
+
+   		return "blog";
+   	}
+    
+    @RequestMapping("/articles")
+   	public String articles(Model model) {
+
+   		return "articles";
+   	}
     
 	@RequestMapping("/infos")
 	public String infos(Model model) {
@@ -88,6 +129,13 @@ public class UserController {
 	  model.addAttribute("topoInfos", list);
 	  
 	  return "topoList"; }
+	  
+	  
+	  @RequestMapping(value = "/userList", method = RequestMethod.GET) public
+	  String userList(Model model) { List<User> list = userService.listUserInfos();
+	  model.addAttribute("userInfos", list);
+	  
+	  return "userList"; }
 	 
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
@@ -98,7 +146,7 @@ public class UserController {
             return "registration";
         }
 
-        userService.save(userForm);
+        userService.saveUser2(userForm);
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
@@ -157,4 +205,43 @@ public class UserController {
     public String welcome(Model model) {
         return "welcome";
     }
+	@RequestMapping(value = "/saveUser", method = RequestMethod.POST)
+	public String saveUser(Model model, //
+			@ModelAttribute("userForm") @Validated User user, //
+			BindingResult result, //
+			final RedirectAttributes redirectAttributes) {
+
+		if (result.hasErrors()) {
+			return this.formUser(model);
+		}
+
+		this.userService.saveUser(user);
+
+		// Important!!: Need @EnableWebMvc
+		// Add message to flash scope
+		redirectAttributes.addFlashAttribute("message", "Save User Successful");
+
+		return "redirect:/userList";
+
+	}
+	
+	@RequestMapping(value = "/saveUser2", method = RequestMethod.POST)
+	public String saveUser2(Model model, //
+			@ModelAttribute("userForm") @Validated User user, //
+			BindingResult result, //
+			final RedirectAttributes redirectAttributes) {
+
+		if (result.hasErrors()) {
+			return this.registration(model);
+		}
+
+		this.userService.saveUser2(user);
+
+		// Important!!: Need @EnableWebMvc
+		// Add message to flash scope
+		redirectAttributes.addFlashAttribute("message", "Save User Successful");
+
+		return "redirect:/welcome";
+
+	}
 }

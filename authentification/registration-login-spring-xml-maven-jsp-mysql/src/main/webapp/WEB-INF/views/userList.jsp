@@ -54,7 +54,7 @@
 							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
 						</div>
 						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
+							<a href="${pageContext.request.contextPath}/topoForm" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
 						</div>
 <br/>
  
@@ -64,22 +64,20 @@
 <br/>
 <table border="1">
  <tr>
-   <th>Name</th>
+   
    <th>Login</th>
    <th>Password</th>
-   <th>Email</th>
-   <th>Cotation</th>
+
    <th>Edit</th>
    <th>Delete</th>
  </tr>
  <c:forEach items="${userInfos}" var="info">
  
  <tr>
-   <td> ${info.name}  </td>
+  
    <td> ${info.username}  </td>
    <td> ${info.password} </td>
-   <td> ${info.email} </td>
-   <td> ${info.cotation} </td>
+  
    <td> <a href="deleteUser?id=${info.id}">Delete</a> </td>
    <td> <a href="editUser?id=${info.id}">Edit</a> </td>
  </tr>    

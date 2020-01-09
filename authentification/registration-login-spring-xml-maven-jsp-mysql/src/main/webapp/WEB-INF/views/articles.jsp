@@ -9,7 +9,7 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Les amis de l'escalade</title>
+	<title>Les articles</title>
 	<style><%@include file="/resources/css/style.css"%></style>
 </head>
 <header class="h-25 d-inline-block">
@@ -49,10 +49,7 @@
 							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
 						</div>
 						
-						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/articles" class="btn btn-primary btn-lg active" role="button">Les articles</a>
-						</div>
-						
+					
 
 					</div>
 				</div>

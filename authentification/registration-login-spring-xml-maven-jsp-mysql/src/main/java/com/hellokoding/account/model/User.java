@@ -13,7 +13,40 @@ public class User {
     private String passwordConfirm;
     private Set<Role> roles;
 
-    @Id
+     
+    public User() {
+		super();
+	
+	}
+
+
+    
+    
+	public User(Long id, String username, String password) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+	}
+
+
+
+
+	public User(Long id, String username, String password, String passwordConfirm, Set<Role> roles) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.passwordConfirm = passwordConfirm;
+		this.roles = roles;
+	}
+
+
+
+
+
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;

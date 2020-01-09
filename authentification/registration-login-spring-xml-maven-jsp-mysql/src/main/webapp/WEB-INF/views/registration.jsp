@@ -49,13 +49,13 @@
 </div>
 </div>
 </section>
-<div class="container col-6">
+<div class="container col-6 card-body">
 
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
-        <h2 class="form-signin-heading">Create your account</h2>
+         <h2 class="h4 text-primary text-center m-0 font-weight-bold form-signin-heading">Create your account</h2>
         <spring:bind path="username">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="username" class="form-control" placeholder="Username"
+                <form:input class="form-control form-control-lg rounded-0" type="text" path="username"  placeholder="Username"
                             autofocus="true"></form:input>
                 <form:errors path="username"></form:errors>
             </div>
@@ -63,14 +63,14 @@
 
         <spring:bind path="password">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+                <form:input class="form-control form-control-lg rounded-0" type="password" path="password"  placeholder="Password"></form:input>
                 <form:errors path="password"></form:errors>
             </div>
         </spring:bind>
 
         <spring:bind path="passwordConfirm">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="passwordConfirm" class="form-control"
+                <form:input type="password" path="passwordConfirm" class="form-control form-control-lg rounded-0"
                             placeholder="Confirm your password"></form:input>
                 <form:errors path="passwordConfirm"></form:errors>
             </div>
@@ -78,6 +78,8 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form:form>
+       Are you a member? 
+                            <a class="font-weight-bold" href="${pageContext.request.contextPath}/login">Log In Here</a>
 
 </div>
 <!-- /container -->
